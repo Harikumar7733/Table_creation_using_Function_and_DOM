@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Creation Using DOM</title>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <script>
+       function createTable(){
+        var table = document.createElement("table");
+        var thead = document.createElement("thead");
+        var tr =    document.createElement("tr");
+        var th1 = document.createElement("td");
+             th1.innerText = "ID";
+        var th2 = document.createElement("td");
+             th2.innerText = "Name";
+        var th3 = document.createElement("td");
+             th3.innerText = "City"
+        
+             thead.appendChild(tr);
+             tr.appendChild(th1);
+             tr.appendChild(th2);
+             tr.appendChild(th3);
+
+
+    var tbody = document.createElement("tbody");
+    var tr1 =document.createElement("tr");
+
+    var td1 =document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+
+    td1.innerText = 101;
+    td2.innerText ="Rohan sharma";
+    td3.innerText = "Hyderbad";
+
+    tbody.appendChild(tr1);
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tr1.appendChild(td3);
+
+    var tr2 =  document.createElement("tr");
+    var td4 =document.createElement("td");
+    var td5 =document.createElement("td");
+    var td6 = document.createElement("td");
+
+    td4.innerText=102;
+    td5.innerText = "Sneha";
+    td6.innerText="Chennai";
+
+    tr2.appendChild(td4);
+    tr2.appendChild(td5);
+    tr2.appendChild(td6);
+
+    tbody.append(tr2);
+
+    var tr3 =document.createElement("tr");
+    var td7 = document.createElement("td");
+    var td8 = document.createElement("td");
+    var td9 = document.createElement("td");
+
+    td7.innerText =103;
+    td8.innerText = "Chandhu";
+    td9.innerText = "TamilNadu";
+
+    tr3.appendChild(td7);
+    tr3.appendChild(td8);
+    tr3.appendChild(td9);
+
+    tbody.append(tr3);
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    table.width="300px";
+    table.rules ="all"
+    table.frame = "box";
+
+    document.querySelector("body").append(table)
+
+
+       }
+    
+    </script>
+
+    
+</body>
+</html>

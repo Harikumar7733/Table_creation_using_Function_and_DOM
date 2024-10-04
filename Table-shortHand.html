@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table-shortHand-using-DOM</title>
+</head>
+<body>
+    <button onclick="createTable()"> Create </button>
+    <script>
+    
+
+        function row_function(tbody){
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+
+            td1.innerText="101";
+            td2.innerText="RajKumar";
+            td3.innerText="Hyderabad";
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            
+            tbody.appendChild(tr);
+        }
+
+        function createTable(){
+            var table = document.createElement("table");
+            var thead = document.createElement("thead");
+            var tbody = document.createElement("tbody");
+            var tr = document.createElement("tr");
+
+            var th1 = document.createElement("th");
+            th1.innerText = "ID";
+            var th2 =document.createElement("th");
+            th2.innerText = "Name";
+            var th3 = document.createElement("th");
+            th3.innerText = "City";
+
+            tr.appendChild(th1);
+            tr.appendChild(th2);
+            tr.appendChild(th3);
+
+            thead.appendChild(tr);
+
+            row_function(tbody);
+            row_function(tbody);
+            row_function(tbody);
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            table.width = "300px";
+            table.rules="all";
+            table.frame = "box";
+            table.style.textAlign = "center";
+
+            document.querySelector("body").appendChild(table);
+
+
+        }
+    </script>
+    
+</body>
+</html>
